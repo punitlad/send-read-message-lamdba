@@ -5,6 +5,8 @@ import uuid
 import logging
 
 def lambda_handler(event, context):
+    logging.getLogger().addHandler(logging.StreamHandler())
+
     sqs = boto3.client('sqs')
     send_message_id = uuid.uuid4()
     logging.info("ID: {id}".format(id=send_message_id))
