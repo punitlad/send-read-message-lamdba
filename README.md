@@ -1,5 +1,4 @@
 # Send Read Message Lambda
-
 Generic set of lambda that sends a message to sqs and subsequently gets read by another lambda. 
 
 ## Usage
@@ -13,11 +12,14 @@ region       = "<your-region>"
 default_tags = <map-of-default-tags>
 ```
 
-Once done, you can run (make sure to specify `AWS_PROFILE` if not the default profile): 
+Once done, you can run:
 ```
 terraform plan
 terraform apply
 ```
+
+> If not using the default profile, specify `AWS_PROFILE` environment variable
+> Terraform configuration doesn't specific state store. If not specified, it will create the state locally. 
 
 ### Triggering lambda
 You can trigger the send-message-lambda via the following: 
