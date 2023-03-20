@@ -38,7 +38,8 @@ module "iam_policy" {
                 "logs:PutLogEvents"
             ],
             "Resource": [
-                "arn:aws:logs:${var.region}:${var.account_id}:log-group:/aws/lambda/send-message-lambda:*"
+                "arn:aws:logs:${var.region}:${var.account_id}:log-group:/aws/lambda/send-message-lambda:*",
+                "arn:aws:logs:${var.region}:${var.account_id}:log-group:/aws/lambda/read-message-lambda:*"
             ]
         },
         {
