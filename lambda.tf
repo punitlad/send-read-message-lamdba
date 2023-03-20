@@ -23,8 +23,8 @@ module "lambda_function_two" {
   version = "~> 4.12.1"
 
   function_name = "read-message-lambda"
-  handler       = "index.lambda_handler"
-  runtime       = "python3.8"
+  handler       = "index.handler"
+  runtime       = "nodejs18.x"
   source_path   = "read-message-lambda/index.py"
   event_source_mapping = {
     sqs = {
