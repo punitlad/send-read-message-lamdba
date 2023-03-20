@@ -1,10 +1,10 @@
 variable "account_id" {
-  type        = string
-  sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 variable "region" {
-    type = string
+  type = string
 }
 
 variable "default_tags" {

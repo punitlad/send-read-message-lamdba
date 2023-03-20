@@ -1,13 +1,13 @@
 module "iam_assumable_role" {
-  source = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
-  version     = "~> 5.1"
+  source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
+  version = "~> 5.1"
 
   trusted_role_services = [
     "lambda.amazonaws.com"
   ]
 
-  create_role = true
-  role_name   = "send-message-lambda-role"
+  create_role       = true
+  role_name         = "send-message-lambda-role"
   role_requires_mfa = false
 
   custom_role_policy_arns = [
@@ -19,8 +19,8 @@ module "iam_assumable_role" {
 module "iam_policy" {
   source = "terraform-aws-modules/iam/aws//modules/iam-policy"
 
-  name        = "send-message-lambda-policy"
-  path        = "/"
+  name = "send-message-lambda-policy"
+  path = "/"
 
   policy = <<EOF
 {
