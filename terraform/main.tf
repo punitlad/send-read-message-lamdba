@@ -40,6 +40,18 @@ module "iam_policy" {
             "Resource": [
                 "arn:aws:logs:${var.region}:${var.account_id}:log-group:/aws/lambda/send-message-lambda:*"
             ]
+        },
+        {
+          "Effect": "Allow",
+          "Action": [
+            "sqs:SendMessage",
+            "sqs:ReceiveMessage",
+            "sqs:DeleteMessage",
+            "sqs:GetQueueAttributes"
+          ],
+          "Resource": [
+            "arn:aws:sqs:${var.region}:${var.account_id}:message-queue"
+          ]
         }
     ]
 }

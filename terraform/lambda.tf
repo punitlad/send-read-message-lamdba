@@ -10,3 +10,7 @@ module "lambda_function" {
   lambda_role = module.iam_assumable_role.iam_role_arn
   create_role = false
 }
+
+resource "aws_sqs_queue" "message_queue" {
+  name                    = "message-queue"
+}
