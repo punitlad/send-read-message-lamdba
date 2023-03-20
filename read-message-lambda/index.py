@@ -1,12 +1,11 @@
 import json
 import boto3
+import logging
 
 def lambda_handler(event, context):
-    print("Triggered from sqs message")
-    print(event["Records"][0]["body"])
+    logging.info("Triggered from sqs message")
+    logging.info(event["Records"][0]["body"])
     return {
         'statusCode': 200,
         'body': json.dumps("Goodbye from Lambda!")
     }
-
-

@@ -2,11 +2,12 @@ import json
 import boto3
 import os
 import uuid
+import logging
 
 def lambda_handler(event, context):
     sqs = boto3.client('sqs')
     send_message_id = uuid.uuid4()
-    print("ID: {id}".format(id=send_message_id))
+    logging.info("ID: {id}".format(id=send_message_id))
     sqs.send_message(
         QueueUrl=os.environ['SQS_URL'],
         MessageBody="Send Message ID: {id}".format(id=send_message_id)
