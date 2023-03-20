@@ -25,7 +25,7 @@ module "lambda_function_two" {
   function_name = "read-message-lambda"
   handler       = "index.handler"
   runtime       = "nodejs18.x"
-  source_path   = "read-message-lambda/index.py"
+  source_path   = "read-message-lambda/index.js"
   event_source_mapping = {
     sqs = {
       event_source_arn        = aws_sqs_queue.message_queue.arn
