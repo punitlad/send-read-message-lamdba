@@ -1,11 +1,11 @@
 # Send Read Message Lambda
-Generic set of lambda that sends a message to sqs and subsequently gets read by another lambda. 
+Generic set of lambda that sends a message to sqs and subsequently gets read by another lambda.
 
 ## Usage
-You can clone this repository or fork (if you're looking to enhance it). 
+You can clone this repository or fork (if you're looking to enhance it).
 
-### Running 
-Within the `terraform` directory, create a `terraform.auto.tfvars` file with the following values: 
+### Running
+Create a `terraform.auto.tfvars` file with the following values:
 ```terraform
 account_id   = "<your-account-id>"
 region       = "<your-region>"
@@ -19,10 +19,10 @@ terraform apply
 ```
 
 > If not using the default profile, specify `AWS_PROFILE` environment variable
-> Terraform configuration doesn't specific state store. If not specified, it will create the state locally. 
+> Terraform configuration doesn't specific state store. If not specified, it will create the state locally.
 
 ### Triggering lambda
-You can trigger the send-message-lambda via the following: 
+You can trigger the send-message-lambda via the following:
 
 ```sh
 aws lambda invoke --function-name send-message-lambda /dev/stdout

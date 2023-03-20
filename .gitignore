@@ -2,6 +2,6 @@ terraform.tfstate
 terraform.tfstate.backup
 .terraform
 .terraform.lock.hcl
-terraform/builds
+builds
 terraform.auto.tfvars
 outputfile.txt

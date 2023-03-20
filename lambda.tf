@@ -5,7 +5,7 @@ module "lambda_function" {
   function_name = "send-message-lambda"
   handler       = "index.lambda_handler"
   runtime       = "python3.8"
-  source_path   = "../send-message-lambda/index.py"
+  source_path   = "send-message-lambda/index.py"
   environment_variables = {
     SQS_URL = aws_sqs_queue.message_queue.url
   }
@@ -25,7 +25,7 @@ module "lambda_function_two" {
   function_name = "read-message-lambda"
   handler       = "index.lambda_handler"
   runtime       = "python3.8"
-  source_path   = "../read-message-lambda/index.py"
+  source_path   = "read-message-lambda/index.py"
   event_source_mapping = {
     sqs = {
       event_source_arn        = aws_sqs_queue.message_queue.arn
