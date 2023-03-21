@@ -18,6 +18,7 @@ module "iam_assumable_role" {
 
 module "iam_policy" {
   source = "terraform-aws-modules/iam/aws//modules/iam-policy"
+  version = "~> 5.1"
 
   name = "send-message-lambda-policy"
   path = "/"

@@ -14,10 +14,6 @@ module "lambda_function" {
   create_role = false
 }
 
-resource "aws_sqs_queue" "message_queue" {
-  name = "message-queue"
-}
-
 module "lambda_function_two" {
   source  = "terraform-aws-modules/lambda/aws"
   version = "~> 4.12.1"
