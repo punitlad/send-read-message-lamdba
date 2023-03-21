@@ -38,7 +38,7 @@ module "lambda_function_three" {
   version = "~> 4.12.1"
 
   function_name = "read-message-lambda-python"
-  handler       = "index.handler"
+  handler       = "index.lambda_handler"
   runtime       = "python3.8"
   source_path   = "read-message-lambda-python/index.py"
   event_source_mapping = {
