@@ -55,6 +55,15 @@ module "iam_policy" {
           "Resource": [
             "arn:aws:sqs:${var.region}:${var.account_id}:message-queue"
           ]
+        },
+        {
+          "Effect": "Allow",
+          "Action": [
+            "xray:*"
+          ],
+          "Resource": [
+            "arn:aws:xray:${var.region}:${var.account_id}:*"
+          ]
         }
     ]
 }
